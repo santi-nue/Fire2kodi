@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.KodiDeviceFragment">
+
+    <EditText
+        android:id="@+id/eTxtPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:password="true"
+        app:layout_constraintStart_toStartOf="@+id/eTxtUser"
+        app:layout_constraintTop_toBottomOf="@+id/eTxtUser" />
+
+    <EditText
+        android:id="@+id/eTxtPort"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:ems="10"
+        android:hint="Port"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/eTxtKodiIP"
+        app:layout_constraintStart_toEndOf="@+id/eTxtKodiIP" />
+
+    <EditText
+        android:id="@+id/eTxtKodiIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="IP Adress 1"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/checkBox1"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/btn_save"
+        app:layout_constraintBottom_toBottomOf="@+id/eTxtPwd"
+        app:layout_constraintStart_toEndOf="@+id/eTxtPwd" />
+
+    <EditText
+        android:id="@+id/eTxtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="User"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/eTxtKodiIP"
+        app:layout_constraintTop_toBottomOf="@+id/eTxtKodiIP" />
+
+    <TextView
+        android:id="@+id/txtClipboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/teal_700"
+        android:clickable="true"
+        android:focusable="true"
+        android:lines="2"
+        android:minHeight="48dp"
+        android:text="@string/click_to_get_clipboard_nvideolink"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnKodiPlay"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/holo_green_dark"
+        android:text="@string/play"
+        app:icon="@drawable/arrow_right_drop_circle_outline"
+        app:layout_constraintEnd_toStartOf="@+id/btnKodiQueue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtClipboard" />
+
+    <Button
+        android:id="@+id/btnKodiQueue"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="@string/queue"
+        app:icon="@drawable/arrow_right_circle_outline_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnKodiPlay" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:checked="false"
+        android:text="@string/kodi_device_1"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swAutoClose" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:checked="false"
+        android:text="@string/kodi_device_2"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eTxtPwd" />
+
+    <EditText
+        android:id="@+id/eTxtKodiIP2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/ip_adress_2"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/checkBox2"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+    <EditText
+        android:id="@+id/eTxtPort2"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="@string/port"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/eTxtKodiIP2"
+        app:layout_constraintStart_toEndOf="@+id/eTxtKodiIP2" />
+
+    <EditText
+        android:id="@+id/eTxtUser2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/user"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="@+id/eTxtKodiIP2"
+        app:layout_constraintTop_toBottomOf="@+id/eTxtKodiIP2" />
+
+    <EditText
+        android:id="@+id/eTxtPwd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:password="true"
+        app:layout_constraintStart_toStartOf="@+id/eTxtUser2"
+        app:layout_constraintTop_toBottomOf="@+id/eTxtUser2" />
+
+    <Button
+        android:id="@+id/btnSave2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="@string/btn_save"
+        app:layout_constraintBottom_toBottomOf="@+id/eTxtPwd2"
+        app:layout_constraintStart_toEndOf="@+id/eTxtPwd2" />
+
+    <Switch
+        android:id="@+id/swAutoQueue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="32dp"
+        android:text="@string/auto_queue"
+        app:layout_constraintEnd_toEndOf="@+id/btnKodiQueue"
+        app:layout_constraintStart_toStartOf="@+id/btnKodiQueue"
+        app:layout_constraintTop_toBottomOf="@+id/btnKodiQueue" />
+
+    <Switch
+        android:id="@+id/swAutoClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="32dp"
+        android:text="@string/auto_close"
+        app:layout_constraintBottom_toBottomOf="@+id/swAutoQueue"
+        app:layout_constraintEnd_toEndOf="@+id/btnKodiPlay"
+        app:layout_constraintStart_toStartOf="@+id/btnKodiPlay" />
+
+    <TextView
+        android:id="@+id/textVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:hint="@string/version"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/eTxtPwd2"
+        app:layout_constraintTop_toBottomOf="@+id/eTxtPwd2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

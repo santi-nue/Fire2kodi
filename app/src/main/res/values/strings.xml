@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Fire2Kodi</string>
+    <string name="tab_text_1">Settings</string>
+    <string name="tab_text_2">Kodi Device</string>
+    <string name="kodiip">192.168.178.94</string>
+    <string name="port">8080</string>
+    <string name="rumble">plugin.video.rumble.matrix/?url=https://rumble.com/</string>
+    <string name="youtube">plugin.video.youtube/play/?video_id=</string>
+    <string name="bitchute">plugin.video.bitchute/play_now/</string>
+    <string name="odysee">plugin.video.lbry/play/</string>
+    <string name="vimeo">plugin.video.vimeo/play/?video_id=</string>
+    <string name="dailymotion">plugin.video.dailymotion_com/?url=</string>
+    <string name="btn_save">Save</string>
+    <string name="click_to_get_clipboard_nvideolink">Get Videolink from \nClipboard</string>
+    <string name="play">Play</string>
+    <string name="queue">Queue</string>
+    <string name="kodi_device_1">Kodi Device 1</string>
+    <string name="kodi_device_2">Kodi Device 2</string>
+    <string name="ip_adress_2">IP Adress 2</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="auto_queue">Auto Queue</string>
+    <string name="auto_close">Auto Close</string>
+    <string name="version">version</string>
+    <string name="SetSaved">Settings saved</string>
+    <string name="ValidLink">Valid Video Link</string>
+    <string name="MessageKodi">Message from Kodi: \n</string>
+</resources>
