@@ -1,5 +1,6 @@
 package com.isayso.fire2kodi.ui.main;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -15,6 +16,7 @@ import java.net.URL;
 
 public class SendKodi {
 
+    @SuppressLint("StaticFieldLeak")
     public static Context context;
 
     public static String kodiIP = read("KodiIP","192.168.");

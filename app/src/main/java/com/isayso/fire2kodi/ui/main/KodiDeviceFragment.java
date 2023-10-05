@@ -29,7 +29,6 @@ public class KodiDeviceFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "section_number";
 
-    private PageViewModel pageViewModel;
     private FragmentKodidevBinding binding;
 
     public String pluginString ="", result ="", deviceUrl ="";
@@ -46,7 +45,7 @@ public class KodiDeviceFragment extends Fragment {
    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        pageViewModel = new ViewModelProvider(this).get(PageViewModel.class);
+       PageViewModel pageViewModel = new ViewModelProvider(this).get(PageViewModel.class);
         int index = 1;
         if (getArguments() != null) {
             index = getArguments().getInt(ARG_SECTION_NUMBER);
@@ -262,7 +261,7 @@ public class KodiDeviceFragment extends Fragment {
 
             String yt_Link = TxtClipboard.getText().toString();
 
-            if (yt_Link.isEmpty() || yt_Link == null ) return;
+            if (yt_Link.isEmpty()) return;
 
             ValidVideoType  videoType = GetLinktype.ValidLinkCheck(yt_Link);
 

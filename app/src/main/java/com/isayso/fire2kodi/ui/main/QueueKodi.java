@@ -7,7 +7,7 @@ public class QueueKodi {
 
     public static String onIntentQueueKodi(String yt_Link, ValidVideoType videoType, boolean queue) {
 
-        if (yt_Link.isEmpty() || yt_Link == null ) return "Error";
+        if (yt_Link.isEmpty()) return "Error";
 
           //  final boolean[] ActivePlayer = {false};
 
