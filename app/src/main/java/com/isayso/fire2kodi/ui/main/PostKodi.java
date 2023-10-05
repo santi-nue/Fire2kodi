@@ -1,6 +1,7 @@
 package com.isayso.fire2kodi.ui.main;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Base64;
 
@@ -17,6 +18,7 @@ import java.nio.charset.StandardCharsets;
 
 public class PostKodi {
 
+  //  @SuppressLint("StaticFieldLeak")
     public static Context context = GlobalApplication.getAppContext();
     public static String result = null;
 
@@ -54,10 +56,9 @@ public class PostKodi {
 
 
             //Write to Kodi
-            String jsonInputString = data;
 
             try (OutputStream os = urlConnection.getOutputStream()) {
-                byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+                byte[] input = data.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             }
 
@@ -98,8 +99,6 @@ public class PostKodi {
 */
             //   Toast.makeText(context,"Message from Server: \n"+ result, (int) 10).show();
 
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -132,10 +131,9 @@ public class PostKodi {
 
 
             //Write to Kodi
-            String jsonInputString = data;
 
             try (OutputStream os = urlConnection.getOutputStream()) {
-                byte[] input = jsonInputString.getBytes(StandardCharsets.UTF_8);
+                byte[] input = data.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
             }
 
@@ -185,8 +183,6 @@ public class PostKodi {
 */
             //   Toast.makeText(context,"Message from Server: \n"+ result, (int) 10).show();
 
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

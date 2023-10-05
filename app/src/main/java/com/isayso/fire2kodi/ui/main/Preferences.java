@@ -1,5 +1,6 @@
 package com.isayso.fire2kodi.ui.main;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -14,6 +15,7 @@ import java.security.GeneralSecurityException;
 
 public class Preferences {
 
+   // @SuppressLint("StaticFieldLeak")
     public static Context context = GlobalApplication.getAppContext();
 
 

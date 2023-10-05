@@ -1,0 +1,2 @@
+Gets video links from clipboard or send-to menu and sends it to the 
+corresponding Kodi Addon on the KodiTV system.

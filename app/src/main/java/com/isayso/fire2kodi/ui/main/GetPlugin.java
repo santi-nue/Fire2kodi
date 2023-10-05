@@ -1,5 +1,6 @@
 package com.isayso.fire2kodi.ui.main;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -8,6 +9,7 @@ import com.isayso.fire2kodi.GlobalApplication;
 
 public class GetPlugin {
 
+   // @SuppressLint("StaticFieldLeak")
     public static Context context = GlobalApplication.getAppContext();
     public static String PLUG = "plugin://", ytPluginLink ="";
 
