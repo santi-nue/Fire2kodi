@@ -40,6 +40,10 @@ public class GetLinktype {
         {
             return ValidVideoType.Lbry;
         }
+        else if (i_Link.contains("banned.video") )
+        {
+            return ValidVideoType.Banned;
+        }
 
         else
         {
@@ -65,6 +69,10 @@ public static String GetPluginString(ValidVideoType videoType, String vlink){
 
         case Rmbl:
             pluginString = GetPlugin.ImportRumbleLink(vlink);
+            break;
+
+        case Banned:
+            pluginString = GetPlugin.ImportBannedLink(vlink);
             break;
 
         case Lbry:

@@ -7,6 +7,14 @@ import android.preference.PreferenceManager;
 
 import com.isayso.fire2kodi.GlobalApplication;
 
+import org.intellij.lang.annotations.RegExp;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import kotlin.text.MatchGroup;
+import kotlin.text.Regex;
+
 public class GetPlugin {
 
    // @SuppressLint("StaticFieldLeak")
@@ -16,7 +24,8 @@ public class GetPlugin {
     public static String YTPLUGIN = PLUG + read("YTaddon","plugin.video.youtube/play/?video_id="),
     VIPLUGIN = PLUG + read("VIMaddon","plugin.video.vimeo/play/?video_id="),
     LBRYPLUGIN = PLUG + read("ODYaddon","plugin.video.lbry/play/"),
-    RBLPLUGIN = PLUG + read("RMBaddon","plugin.video.rumble.matrix/?url=https://rumble.com/"),
+    RBLPLUGIN = PLUG + read("RMBaddon","plugin.video.rumble/?url=https://rumble.com/"),
+    BANPLUGIN = PLUG + read("BANaddon","plugin.video.banned.video/?url=https://assets.infowarsmedia.com/"),
     DMPLUGIN1 = PLUG + read("DAYaddon","plugin.video.dailymotion_com/?url="),
     BCPLUGIN = PLUG + read("BITaddon","plugin.video.bitchute/play_now/"),
     DMPLUGIN2 = "&mode=playVideo"; //;mode=playVideo&quot"; //plugin.video.dailymotion_com/?url=
@@ -25,6 +34,24 @@ public class GetPlugin {
 
     public static String ImportYTLink(String yt_Link)
     {
+
+        String videokey = ScrapHtml(yt_Link, "v=(.*?)(&|$)");
+
+        if (videokey.isEmpty())
+        {
+            videokey = ScrapHtml(yt_Link, "embed\\/(.*?)(\\?|$)");
+        }
+        else if (videokey.isEmpty())
+        {
+            videokey = ScrapHtml(yt_Link, "shorts\\/(.*?)(\\?|$)");
+        }
+        if (!videokey.isEmpty())
+        {
+            ytPluginLink = YTPLUGIN + videokey;
+        }
+        return ytPluginLink;
+
+/*
         String url = "";
 
         if (yt_Link.contains("youtube.com") || yt_Link.contains("www.youtube-nocookie.com") || yt_Link.contains("youtu.be"))
@@ -102,7 +129,7 @@ public class GetPlugin {
 
         }
         return ytPluginLink;
-
+*/
     }
 
     public static String GetPartString(String fullstr, String startstr, String endstr)
@@ -163,6 +190,14 @@ public class GetPlugin {
 
     }
 
+    public static String ImportBannedLink(String yt_Link)
+    {  //todo
+        String[] key_em = yt_Link.split("/");
+        ytPluginLink = BANPLUGIN + key_em[key_em.length - 1] + "&mode=4&play=2";
+        return ytPluginLink;
+
+    }
+
     public static String ImportBCLink(String url)
     {
         url = url.replace("https://", "");
@@ -180,6 +215,19 @@ public class GetPlugin {
         SharedPreferences prefs = PreferenceManager
                 .getDefaultSharedPreferences(context);  //todo exception
         return prefs.getString(valueKey, valueDefault);
+    }
+
+    public static String ScrapHtml(String source, String regstring){
+
+        String ytkey = "";
+        Pattern p = Pattern.compile(regstring);
+        Matcher t = p.matcher(source);
+
+        while (t.find()) { // Find each match in turn; String can't do this.
+             ytkey = t.group(1); // Access a submatch group; String can't do this.
+        }
+        return ytkey;
+
     }
 
 }

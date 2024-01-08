@@ -4,7 +4,7 @@
     <string name="tab_text_2">Kodi Device</string>
     <string name="kodiip">192.168.178.94</string>
     <string name="port">8080</string>
-    <string name="rumble">plugin.video.rumble.matrix/?url=https://rumble.com/</string>
+    <string name="rumble">plugin.video.rumble/?url=https://rumble.com/</string>
     <string name="youtube">plugin.video.youtube/play/?video_id=</string>
     <string name="bitchute">plugin.video.bitchute/play_now/</string>
     <string name="odysee">plugin.video.lbry/play/</string>
@@ -25,4 +25,5 @@
     <string name="SetSaved">Settings saved</string>
     <string name="ValidLink">Valid Video Link</string>
     <string name="MessageKodi">Message from Kodi: \n</string>
+    <string name="banned">plugin.video.banned.video/?url=https://assets.infowarsmedia.com/</string>
 </resources>

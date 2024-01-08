@@ -58,6 +58,9 @@ public class PlaceholderFragment extends Fragment {
         final EditText textDay = binding.editTextDay;
         textDay.setText(Preferences.read("DAYaddon","plugin.video.dailymotion_com/?url="));
 
+        final EditText textBan = binding.editTextBanned;
+        textDay.setText(Preferences.read("BANaddon","plugin.video.banned.video/?url=https://assets.infowarsmedia.com/"));
+
         final Button BtnSave = binding.buttonSave;
         final Button BtnCancel = binding.buttonCancel;
 
@@ -74,6 +77,7 @@ public class PlaceholderFragment extends Fragment {
                 Preferences.save("ODYaddon",textOdy.getText().toString());
                 Preferences.save("VIMaddon",textVim.getText().toString());
                 Preferences.save("DAYaddon",textDay.getText().toString());
+                Preferences.save("BANaddon",textBan.getText().toString());
 
                 Toast.makeText(getContext(),"Saved, please restart App", (int) 15).show();
 
@@ -91,6 +95,7 @@ public class PlaceholderFragment extends Fragment {
                 textOdy.setText(Preferences.read("ODYaddon","plugin.video.lbry/play/"));
                 textVim.setText(Preferences.read("VIMaddon","plugin.video.vimeo/play/?video_id="));
                 textDay.setText(Preferences.read("DAYaddon","plugin.video.dailymotion_com/?url="));
+                textBan.setText(Preferences.read("BANaddon","plugin.video.banned.video/?url=https://assets.infowarsmedia.com/"));
 
             }
         });
