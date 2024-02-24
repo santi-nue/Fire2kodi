@@ -1,19 +1,15 @@
 package com.isayso.fire2kodi.ui.main;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.isayso.fire2kodi.GlobalApplication;
 
-import org.intellij.lang.annotations.RegExp;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import kotlin.text.MatchGroup;
-import kotlin.text.Regex;
 
 public class GetPlugin {
 
@@ -41,9 +37,13 @@ public class GetPlugin {
         {
             videokey = ScrapHtml(yt_Link, "embed\\/(.*?)(\\?|$)");
         }
-        else if (videokey.isEmpty())
+        if (videokey.isEmpty())
         {
             videokey = ScrapHtml(yt_Link, "shorts\\/(.*?)(\\?|$)");
+        }
+        if (videokey.isEmpty())
+        {
+            videokey = ScrapHtml(yt_Link, ".be\\/(.*?)(\\?|$)");
         }
         if (!videokey.isEmpty())
         {
