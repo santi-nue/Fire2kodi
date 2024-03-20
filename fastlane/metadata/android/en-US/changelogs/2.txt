@@ -1,3 +1,4 @@
 0.46
-update to latest android version
+- update to latest android version
+- default Rumble Addon string changed
 
