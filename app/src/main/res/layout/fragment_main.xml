@@ -72,6 +72,15 @@
             app:layout_constraintStart_toStartOf="@+id/textView3"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Bitchute"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRmb" />
+
         <EditText
             android:id="@+id/editTextBit"
             android:layout_width="wrap_content"
@@ -89,13 +98,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Bitchute"
+            android:text="Odysee"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextRmb" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextBit" />
 
         <EditText
             android:id="@+id/editTextOdy"
@@ -113,13 +122,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Odysee"
+            android:text="Vimeo"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBit" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextOdy" />
 
         <EditText
             android:id="@+id/editTextVim"
@@ -137,13 +146,13 @@
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Vimeo"
+            android:text="Dailymotion"
             app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextOdy" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextVim" />
 
         <EditText
             android:id="@+id/editTextDay"
@@ -160,14 +169,6 @@
             app:layout_constraintStart_toStartOf="@+id/textView12"
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Dailymotion"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/editTextVim" />
 
         <Button
             android:id="@+id/buttonSave"
@@ -175,7 +176,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="16dp"
             android:text="Save Settings"
             app:layout_constraintEnd_toStartOf="@+id/buttonCancel"
             app:layout_constraintStart_toStartOf="parent"

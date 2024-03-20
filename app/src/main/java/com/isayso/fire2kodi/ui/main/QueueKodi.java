@@ -7,11 +7,11 @@ public class QueueKodi {
 
     public static String onIntentQueueKodi(String yt_Link, ValidVideoType videoType, boolean queue) {
 
-        if (yt_Link.isEmpty()) return "Error";
+        if (yt_Link.isEmpty()) {return "Error";}
 
           //  final boolean[] ActivePlayer = {false};
 
-           String pluginString = GetLinktype.GetPluginString(videoType,yt_Link);
+            String pluginString = GetLinktype.GetPluginString(videoType,yt_Link);
 
             if (Preferences.readBool("ChkD1", true)) {
                 deviceUrl = "http://" + KodiDevice1.IP + ":" + KodiDevice1.Port +  "/jsonrpc?request=";
@@ -21,7 +21,6 @@ public class QueueKodi {
             }
 
             return PostKodi.StartKodi(pluginString, deviceUrl, queue);
-
 
     }
 

@@ -38,9 +38,8 @@ public class GetLinktype {
         }
         else if (i_Link.contains("lbry.tv") || i_Link.contains("odysee.com"))
         {
-            return ValidVideoType.Lbry;
+            return ValidVideoType.Odysee;
         }
-
         else
         {
             return ValidVideoType.Invalid;
@@ -67,8 +66,8 @@ public static String GetPluginString(ValidVideoType videoType, String vlink){
             pluginString = GetPlugin.ImportRumbleLink(vlink);
             break;
 
-        case Lbry:
-            pluginString = GetPlugin.ImportLbryLink(vlink);
+        case Odysee:
+            pluginString = GetPlugin.ImportOdyseeLink(vlink);
             break;
 
         case Daily:

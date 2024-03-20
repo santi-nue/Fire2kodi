@@ -4,7 +4,7 @@
     <string name="tab_text_2">Kodi Device</string>
     <string name="kodiip">192.168.178.94</string>
     <string name="port">8080</string>
-    <string name="rumble">plugin.video.rumble.matrix/?url=https://rumble.com/</string>
+    <string name="rumble">plugin.video.rumble/?url=https://rumble.com/</string>
     <string name="youtube">plugin.video.youtube/play/?video_id=</string>
     <string name="bitchute">plugin.video.bitchute/play_now/</string>
     <string name="odysee">plugin.video.lbry/play/</string>
@@ -16,7 +16,7 @@
     <string name="queue">Queue</string>
     <string name="kodi_device_1">Kodi Device 1</string>
     <string name="kodi_device_2">Kodi Device 2</string>
-    <string name="ip_adress_2">IP Adress 2</string>
+    <string name="ip_adress_2">IP Address 2</string>
     <string name="user">User</string>
     <string name="password">Password</string>
     <string name="auto_queue">Auto Queue</string>
