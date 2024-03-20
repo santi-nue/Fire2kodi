@@ -86,4 +86,11 @@ public class Preferences {
         edit.apply();
     }
 
+    public static void  reset(){
+        SharedPreferences prefs = androidx.preference.PreferenceManager
+                .getDefaultSharedPreferences(context);
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.clear();
+        edit.commit();
+    }
 }

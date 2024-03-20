@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.isayso.fire2kodi.R;
 import com.isayso.fire2kodi.databinding.FragmentMainBinding;
 
 /**
@@ -41,25 +42,22 @@ public class PlaceholderFragment extends Fragment {
         View root = binding.getRoot();
 
         final EditText textYT = binding.editTextYT;
-        textYT.setText(Preferences.read("YTaddon","plugin.video.youtube/play/?video_id="));
+        textYT.setText(Preferences.read("YTaddon",getResources().getString(R.string.youtube)));
 
         final EditText textRMB = binding.editTextRmb;
-        textRMB.setText(Preferences.read("RMBaddon","plugin.video.rumble.matrix/?url=https://rumble.com/"));
+        textRMB.setText(Preferences.read("RMBaddon",getResources().getString(R.string.rumble)));
 
-        final EditText textBit = binding.editTextRmb;
-        textBit.setText(Preferences.read("BITaddon","plugin.video.bitchute/play_now/"));
+        final EditText textBit = binding.editTextBit;
+        textBit.setText(Preferences.read("BITaddon",getResources().getString(R.string.bitchute)));
 
-        final EditText textOdy = binding.editTextRmb;
-        textOdy.setText(Preferences.read("ODYaddon","plugin.video.lbry/play/"));
+        final EditText textOdy = binding.editTextOdy;
+        textOdy.setText(Preferences.read("ODYaddon",getResources().getString(R.string.odysee)));
 
         final EditText textVim = binding.editTextVim;
-        textVim.setText(Preferences.read("VIMaddon","plugin.video.vimeo/play/?video_id="));
+        textVim.setText(Preferences.read("VIMaddon",getResources().getString(R.string.vimeo)));
 
         final EditText textDay = binding.editTextDay;
-        textDay.setText(Preferences.read("DAYaddon","plugin.video.dailymotion_com/?url="));
-
-        final EditText textBan = binding.editTextBanned;
-        textDay.setText(Preferences.read("BANaddon","plugin.video.banned.video/?url=https://assets.infowarsmedia.com/"));
+        textDay.setText(Preferences.read("DAYaddon",getResources().getString(R.string.dailymotion)));
 
         final Button BtnSave = binding.buttonSave;
         final Button BtnCancel = binding.buttonCancel;
@@ -77,7 +75,6 @@ public class PlaceholderFragment extends Fragment {
                 Preferences.save("ODYaddon",textOdy.getText().toString());
                 Preferences.save("VIMaddon",textVim.getText().toString());
                 Preferences.save("DAYaddon",textDay.getText().toString());
-                Preferences.save("BANaddon",textBan.getText().toString());
 
                 Toast.makeText(getContext(),"Saved, please restart App", (int) 15).show();
 
@@ -89,17 +86,24 @@ public class PlaceholderFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                textYT.setText(Preferences.read("YTaddon","plugin.video.youtube/play/?video_id="));
-                textRMB.setText(Preferences.read("RMBaddon","plugin.video.rumble.matrix/?url=https://rumble.com/"));
-                textBit.setText(Preferences.read("BITaddon","plugin.video.bitchute/play_now/"));
-                textOdy.setText(Preferences.read("ODYaddon","plugin.video.lbry/play/"));
-                textVim.setText(Preferences.read("VIMaddon","plugin.video.vimeo/play/?video_id="));
-                textDay.setText(Preferences.read("DAYaddon","plugin.video.dailymotion_com/?url="));
-                textBan.setText(Preferences.read("BANaddon","plugin.video.banned.video/?url=https://assets.infowarsmedia.com/"));
+                textYT.setText(Preferences.read("YTaddon",getResources().getString(R.string.youtube)));
+                textRMB.setText(Preferences.read("RMBaddon",getResources().getString(R.string.rumble)));
+                textBit.setText(Preferences.read("BITaddon",getResources().getString(R.string.bitchute)));
+                textOdy.setText(Preferences.read("ODYaddon",getResources().getString(R.string.odysee)));
+                textVim.setText(Preferences.read("VIMaddon",getResources().getString(R.string.vimeo)));
+                textDay.setText(Preferences.read("DAYaddon",getResources().getString(R.string.dailymotion)));
 
             }
         });
 
+       BtnCancel.setOnLongClickListener(new View.OnLongClickListener() {
+           @Override
+           public boolean onLongClick(View view) {
+               Preferences.reset();
+               Toast.makeText(getContext(),"Values reset", (int) 10).show();
+               return true;
+           }
+       });
 
         return root;
     }

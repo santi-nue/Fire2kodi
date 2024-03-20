@@ -25,7 +25,4 @@
     <string name="SetSaved">Settings saved</string>
     <string name="ValidLink">Valid Video Link</string>
     <string name="MessageKodi">Message from Kodi: \n</string>
-    <string name="banned">plugin.video.banned.video/?url=https://assets.infowarsmedia.com/</string>
-    <string name="how_to_find_plugin_string">How to find plugin string:
-        Run a video in Kodi and save it as favorite. Go to favorite.xml and extract plugin string.</string>
 </resources>

@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.isayso.fire2kodi.GlobalApplication;
+import com.isayso.fire2kodi.R;
 
 
 import java.util.regex.Matcher;
@@ -15,20 +16,19 @@ public class GetPlugin {
 
    // @SuppressLint("StaticFieldLeak")
     public static Context context = GlobalApplication.getAppContext();
-    public static String PLUG = "plugin://", ytPluginLink ="";
+    public static String PLUG = "plugin://", kodiPluginLink ="";
 
-    public static String YTPLUGIN = PLUG + read("YTaddon","plugin.video.youtube/play/?video_id="),
-    VIPLUGIN = PLUG + read("VIMaddon","plugin.video.vimeo/play/?video_id="),
-    LBRYPLUGIN = PLUG + read("ODYaddon","plugin.video.lbry/play/"),
-    RBLPLUGIN = PLUG + read("RMBaddon","plugin.video.rumble/?url=https://rumble.com/"),
-    BANPLUGIN = PLUG + read("BANaddon","plugin.video.banned.video/?url=https://assets.infowarsmedia.com/"),
-    DMPLUGIN1 = PLUG + read("DAYaddon","plugin.video.dailymotion_com/?url="),
-    BCPLUGIN = PLUG + read("BITaddon","plugin.video.bitchute/play_now/"),
+    public static String YTPLUGIN = PLUG + read("YTaddon",context.getString(R.string.youtube)),
+    VIPLUGIN = PLUG + read("VIMaddon",context.getString(R.string.vimeo)),
+    ODYPLUGIN = PLUG + read("ODYaddon",context.getString(R.string.odysee)),
+    RBLPLUGIN = PLUG + read("RMBaddon",context.getString(R.string.rumble)),
+    DMPLUGIN1 = PLUG + read("DAYaddon",context.getString(R.string.dailymotion)),
+    BCPLUGIN = PLUG + read("BITaddon",context.getString(R.string.bitchute)),
     DMPLUGIN2 = "&mode=playVideo"; //;mode=playVideo&quot"; //plugin.video.dailymotion_com/?url=
 
 
 
-    public static String ImportYTLink(String yt_Link)
+    public static String ImportYTLink(String yt_Link) //Youtube
     {
 
         String videokey = ScrapHtml(yt_Link, "v=(.*?)(&|$)");
@@ -47,9 +47,9 @@ public class GetPlugin {
         }
         if (!videokey.isEmpty())
         {
-            ytPluginLink = YTPLUGIN + videokey;
+            kodiPluginLink = YTPLUGIN + videokey;
         }
-        return ytPluginLink;
+        return kodiPluginLink;
 
 /*
         String url = "";
@@ -148,65 +148,56 @@ public class GetPlugin {
     }
 
 
-    public static String ImportDailyLink(String yt_Link)
+    public static String ImportDailyLink(String yt_Link)  //Dailymotion
     {
 
         String[] key_em = yt_Link.split("/");
-        ytPluginLink = DMPLUGIN1 + key_em[key_em.length - 1] + DMPLUGIN2;
-        return ytPluginLink;
+        kodiPluginLink = DMPLUGIN1 + key_em[key_em.length - 1] + DMPLUGIN2;
+        return kodiPluginLink;
 
     }
 
 
-    public static String ImportVimeoLink(String yt_Link)
+    public static String ImportVimeoLink(String yt_Link)  //Vimeo
     {
 
         String[] key_em = yt_Link.split("/");
-        ytPluginLink = VIPLUGIN + key_em[key_em.length - 1];
-        return ytPluginLink;
+        kodiPluginLink = VIPLUGIN + key_em[key_em.length - 1];
+        return kodiPluginLink;
 
     }
 
-    public static String ImportLbryLink(String yt_Link)
+    public static String ImportOdyseeLink(String yt_Link) //Odysee
     {
         String[] key_em = yt_Link.split("/");
 
         if (yt_Link.contains("embed"))
         {
-            ytPluginLink = LBRYPLUGIN + key_em[5];
+            kodiPluginLink = ODYPLUGIN + key_em[5];
         }
         else
-            ytPluginLink = LBRYPLUGIN + key_em[key_em.length - 1] ;
+            kodiPluginLink = ODYPLUGIN + key_em[key_em.length - 1] ;
 
-        return ytPluginLink;
+        return kodiPluginLink;
 
     }
 
-    public static String ImportRumbleLink(String yt_Link)
+    public static String ImportRumbleLink(String yt_Link)  //Rumble
     {
         String[] key_em = yt_Link.split("/");
-        ytPluginLink = RBLPLUGIN + key_em[key_em.length - 1] + "&mode=4&play=2";
-        return ytPluginLink;
+        kodiPluginLink = RBLPLUGIN + key_em[key_em.length - 1] + "&mode=4&play=2";
+        return kodiPluginLink;
 
     }
 
-    public static String ImportBannedLink(String yt_Link)
-    {  //todo
-        String[] key_em = yt_Link.split("/");
-        ytPluginLink = BANPLUGIN + key_em[key_em.length - 1] + "&mode=4&play=2";
-        return ytPluginLink;
-
-    }
-
-    public static String ImportBCLink(String url)
+    public static String ImportBCLink(String url) //bitchute
     {
         url = url.replace("https://", "");
         String[] key = url.split("/");
-        ytPluginLink = BCPLUGIN + key[2];
-        return ytPluginLink;
+        kodiPluginLink = BCPLUGIN + key[2];
+        return kodiPluginLink;
 
     }
-
 
     //read preferences String
 
