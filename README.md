@@ -1,3 +1,7 @@
+From:
+https://codeberg.org/Isayso/Fire2kodi
+
+
 # Fire2kodi
 Android app to send video links to Kodi TV device via clipboard or send-to menu. 
 Kore sends links to Kodi devices but cannot translate them for the specific video Addons. 
